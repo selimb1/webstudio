@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Barcat y Asociados — Estudio Contable | Impuestos y Auditorías</title>
+  <title>Barcat & Asociados — Estudio Contable | Impuestos y Auditorías</title>
   <meta name="description" content="Estudio contable especializado en impuestos y auditorías. Seriedad, confianza y resultados. Agendá una reunión por Google Meet." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,25 +21,40 @@
 
     /* Header / Nav */
     header{position:sticky; top:0; z-index:50; background:var(--bg); border-bottom:1px solid var(--line)}
-    .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
-    .brand{font-weight:700; letter-spacing:.3px}
-    .brand small{font-weight:500; color:var(--muted)}
-    nav ul{display:flex; gap:18px; list-style:none; margin:0; padding:0}
-    nav a{padding:8px 10px; border-radius:10px}
-    nav a:hover{background:#f6f6f6}
-    .btn{display:inline-block; padding:12px 18px; border:1px solid var(--fg); border-radius:999px; font-weight:600}
+    .nav{display:flex; align-items:center; justify-content:space-between; min-height:64px}
+
+    .brand{display:flex; align-items:center; gap:10px}
+    .logo{height:28px; width:auto; border-radius:6px}
+    .brand-text{font-weight:700; letter-spacing:.3px; white-space:nowrap}
+    .brand-text small{font-weight:500; color:var(--muted)}
+    @media(min-width:900px){.logo{height:32px}}
+
+    .menu-btn{display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border:1px solid var(--line); border-radius:10px; background:#fff}
+    .menu-btn:focus{outline:2px solid #000}
+    @media(min-width:900px){.menu-btn{display:none}}
+
+    nav{position:relative}
+    #primaryNav{display:none}
+    #primaryNav.show{display:flex; flex-direction:column; position:absolute; right:0; top:56px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px; gap:6px; min-width:220px; box-shadow:0 12px 40px rgba(0,0,0,.08)}
+    #primaryNav a{padding:10px 12px; border-radius:10px}
+    #primaryNav a:hover{background:#f6f6f6}
+    @media(min-width:900px){
+      #primaryNav{display:flex; position:static; flex-direction:row; align-items:center; background:transparent; border:none; box-shadow:none; padding:0; gap:18px; min-width:auto}
+    }
+
+    .btn{display:inline-block; padding:12px 18px; border:1px solid var(--fg); border-radius:999px; font-weight:600; text-align:center}
     .btn:hover{background:var(--fg); color:#fff}
 
     /* Hero */
-    .hero{padding:64px 0 36px}
-    .hero h1{font-size:clamp(28px,4vw,40px); line-height:1.15; margin:0 0 12px}
+    .hero{padding:56px 0 32px}
+    .hero h1{font-size:clamp(26px,5.2vw,40px); line-height:1.15; margin:0 0 12px}
     .hero p{color:var(--muted); margin:0 0 18px}
     .actions{display:flex; gap:12px; flex-wrap:wrap}
 
     /* Sections */
-    section{padding:56px 0; border-top:1px solid var(--line)}
-    h2{font-size:clamp(22px,3.2vw,30px); margin:0 0 8px}
-    .sub{color:var(--muted); margin:0 0 24px}
+    section{padding:48px 0; border-top:1px solid var(--line)}
+    h2{font-size:clamp(22px,4vw,30px); margin:0 0 8px}
+    .sub{color:var(--muted); margin:0 0 20px}
 
     /* Services */
     .grid{display:grid; grid-template-columns:1fr; gap:16px}
@@ -74,9 +89,16 @@
   <!-- Header / Nav -->
   <header>
     <div class="container nav" aria-label="Barra de navegación principal">
-      <div class="brand">Barcat & Asociados <small>Estudio Contable</small></div>
+      <div class="brand">
+        <!-- Logo: guardar como logo.jpg en la misma carpeta -->
+        <img src="logo.jpg" alt="Logo Barcat & Asociados" class="logo"/>
+        <div class="brand-text">Barcat & Asociados <small>Estudio Contable</small></div>
+      </div>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-controls="primaryNav" aria-expanded="false">☰</button>
+
       <nav>
-        <ul>
+        <ul id="primaryNav">
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#nosotros">Sobre nosotros</a></li>
@@ -202,7 +224,7 @@
   <script>
     // ===== PERSONALIZACIÓN RÁPIDA =====
     // 1) Pegá tu URL de "Programación de citas" (Google Calendar > Crear horario de citas > Copiar enlace público)
-    //    Ejemplo de formato: https://calendar.google.com/calendar/appointments/schedules/XXXXXXXXXXXXXXXX?gv=true
+    //    Ejemplo: https://calendar.google.com/calendar/appointments/schedules/XXXXXXXXXXXXXXXX?gv=true
     //    Si la dejás vacía, el botón abrirá un evento prellenado para que confirmes y agregues Google Meet manualmente.
     const APPOINTMENT_URL = ""; // <- pegá aquí tu enlace público de citas
 
@@ -222,6 +244,18 @@
     // ===== AÑO FOOTER =====
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // ===== MENU MOBILE =====
+    const menuBtn = document.getElementById('menuBtn');
+    const primaryNav = document.getElementById('primaryNav');
+    menuBtn.addEventListener('click', ()=>{
+      const open = primaryNav.classList.toggle('show');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Cerrar menú al navegar
+    primaryNav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+      if(window.innerWidth < 900){ primaryNav.classList.remove('show'); menuBtn.setAttribute('aria-expanded','false'); }
+    }));
+
     // ===== AGENDA (Popup centrado) =====
     function openPopup(url){
       const w = 1040, h = 780;
@@ -238,7 +272,6 @@
 
     // ===== URL de plantilla de evento (prellenado) =====
     function buildCalendarTemplate(){
-      // Prefill básico. El usuario elige fecha/hora y añade Google Meet con un clic.
       const base = 'https://calendar.google.com/calendar/u/0/r/eventedit';
       const params = new URLSearchParams({
         text: 'Reunión con Barcat & Asociados',
@@ -259,7 +292,6 @@
 
     // ===== Validación simple de formulario (cliente) =====
     document.getElementById('contactForm').addEventListener('submit', function(){
-      // Solo mejora UX (el envío lo maneja mailto o tu backend si lo agregás)
       const nombre = document.getElementById('nombre').value.trim();
       const email = document.getElementById('email').value.trim();
       const mensaje = document.getElementById('mensaje').value.trim();
