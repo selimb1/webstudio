@@ -1,356 +1,272 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Estudio Contable – Apertura de LLC en EE.UU. para Argentinos</title>
-  <meta name="description" content="Estudio contable especializado en apertura de LLC en Estados Unidos para pymes y freelancers argentinos. Agenda una asesoría por Google Meet de 08 a 20 hs." />
-  <meta name="theme-color" content="#0b1320" />
-  <meta property="og:title" content="Estudio Contable – Apertura de LLC en EE.UU." />
-  <meta property="og:description" content="Apertura de LLC en EE.UU. para argentinos. Agenda tu asesoría online (08–20 hs)." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/og-cover.jpg" />
-  <link rel="icon" href="/favicon.ico" />
+  <title>Barcat y Asociados — Estudio Contable | Impuestos y Auditorías</title>
+  <meta name="description" content="Estudio contable especializado en impuestos y auditorías. Seriedad, confianza y resultados. Agendá una reunión por Google Meet." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg:#0b1320; --panel:#0f172a; --card:#111827; --muted:#94a3b8; --text:#e5e7eb;
-      --brand:#1f6feb; --brand-2:#2563eb; --ok:#1c8c2e; --bad:#b00020; --line:#1f2937;
+    :root{
+      --bg:#ffffff; --fg:#0a0a0a; --muted:#666666; --line:#e8e8e8; --accent:#0a0a0a; --focus:#000000;
+      --maxw:1040px; --radius:16px; --pad:18px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;color:var(--text);background:linear-gradient(180deg,#0b1320,#0b1320 40%,#0a0f1e)}
-    a{color:var(--brand)}
-    .container{max-width:1160px;margin:0 auto;padding:0 20px}
-    header.site{position:sticky;top:0;z-index:50;background:rgba(11,19,32,.8);backdrop-filter:saturate(120%) blur(8px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;gap:12px;align-items:center}
-    .brand .logo{width:34px;height:34px;border-radius:10px;background:radial-gradient(60% 60% at 50% 40%,#1f6feb,#0ea5e9 70%,#0b1320)}
-    .brand h1{font-size:16px;margin:0}
-    .menu a{color:var(--text);text-decoration:none;opacity:.9}
-    .menu{display:flex;gap:16px;align-items:center}
-    .cta{background:var(--brand);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;border:1px solid #2a3e6f}
+    html,body{margin:0; padding:0; background:var(--bg); color:var(--fg); font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif; line-height:1.5}
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; height:auto; display:block}
+    .container{max-width:var(--maxw); margin-inline:auto; padding-inline:var(--pad)}
 
-    .hero{padding:64px 0 40px;border-bottom:1px solid var(--line)}
-    .hero .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
-    .hero h2{font-size:36px;margin:0 0 10px;line-height:1.15}
-    .hero p{color:var(--muted);margin:0 0 16px}
-    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .badges .b{font-size:12px;border:1px solid #334155;border-radius:999px;padding:6px 10px;color:#cbd5e1}
+    /* Header / Nav */
+    header{position:sticky; top:0; z-index:50; background:var(--bg); border-bottom:1px solid var(--line)}
+    .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
+    .brand{font-weight:700; letter-spacing:.3px}
+    .brand small{font-weight:500; color:var(--muted)}
+    nav ul{display:flex; gap:18px; list-style:none; margin:0; padding:0}
+    nav a{padding:8px 10px; border-radius:10px}
+    nav a:hover{background:#f6f6f6}
+    .btn{display:inline-block; padding:12px 18px; border:1px solid var(--fg); border-radius:999px; font-weight:600}
+    .btn:hover{background:var(--fg); color:#fff}
 
-    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-    .section{padding:48px 0}
-    .section h3{margin:0 0 12px;font-size:24px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-    @media (max-width:980px){.hero .grid,.grid-3,.grid-2{grid-template-columns:1fr}}
+    /* Hero */
+    .hero{padding:64px 0 36px}
+    .hero h1{font-size:clamp(28px,4vw,40px); line-height:1.15; margin:0 0 12px}
+    .hero p{color:var(--muted); margin:0 0 18px}
+    .actions{display:flex; gap:12px; flex-wrap:wrap}
 
-    .list{display:grid;gap:8px;color:#cbd5e1}
-    .list .item{display:flex;gap:10px;align-items:flex-start}
-    .list .dot{width:8px;height:8px;border-radius:50%;margin-top:8px;background:var(--brand)}
+    /* Sections */
+    section{padding:56px 0; border-top:1px solid var(--line)}
+    h2{font-size:clamp(22px,3.2vw,30px); margin:0 0 8px}
+    .sub{color:var(--muted); margin:0 0 24px}
 
-    /* Agenda */
-    .calendar{display:grid;gap:12px}
-    .cal-header{display:flex;justify-content:space-between;align-items:center}
-    .cal-header button{background:transparent;border:1px solid #334155;color:var(--text);padding:8px 12px;border-radius:8px;cursor:pointer}
-    .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
-    .dow{font-weight:600;text-align:center;color:#cbd5e1}
-    .day{padding:10px;border:1px solid #334155;border-radius:8px;text-align:right;height:70px;cursor:pointer;position:relative;background:#0b1320}
-    .day.disabled{opacity:.35;cursor:not-allowed}
-    .day.selected{outline:2px solid var(--brand)}
-    .day .num{position:absolute;top:6px;right:8px;font-weight:700}
+    /* Services */
+    .grid{display:grid; grid-template-columns:1fr; gap:16px}
+    @media(min-width:800px){.grid{grid-template-columns:1fr 1fr}}
+    .card{border:1px solid var(--line); border-radius:var(--radius); padding:20px}
+    .card h3{margin:0 0 8px}
+    .card p{margin:0; color:var(--muted)}
+    .list{margin:12px 0 0; padding:0 0 0 18px}
 
-    .legend{display:flex;gap:12px;align-items:center;margin-top:6px}
-    .dot{width:10px;height:10px;border-radius:50%}
-    .dot.free{background:var(--ok)}
-    .dot.busy{background:var(--bad)}
+    /* About */
+    .about{display:grid; gap:20px; grid-template-columns:1fr}
+    @media(min-width:900px){.about{grid-template-columns:1.1fr .9fr}}
+    .about .box{border:1px solid var(--line); border-radius:var(--radius); padding:20px}
 
-    .slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-top:12px}
-    .slot{padding:10px;border-radius:10px;border:1px solid #374151;text-align:center;cursor:pointer}
-    .slot.free{background:rgba(28,140,46,.12);color:#eaffea;border-color:#256d2a}
-    .slot.busy{background:rgba(176,0,32,.12);color:#ffe8ec;border-color:#9b0a20;cursor:not-allowed}
-    .slot.selected{outline:2px solid var(--brand)}
+    /* Contact */
+    form{display:grid; gap:12px; max-width:680px}
+    label{font-weight:600; font-size:14px}
+    input, textarea{width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:12px; font:inherit; background:#fff}
+    textarea{min-height:120px}
+    input:focus, textarea:focus{outline:2px solid #000; outline-offset:0}
 
-    form{display:grid;gap:12px;margin-top:10px}
-    input,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #374151;background:#0f172a;color:var(--text)}
-    .primary{background:var(--brand);color:white;border:none;border-radius:10px;padding:12px 16px;cursor:pointer;font-weight:700}
-    .help{font-size:12px;color:#9ca3af}
-    .ok{color:var(--ok)} .err{color:var(--bad)}
+    /* Footer */
+    footer{padding:36px 0; border-top:1px solid var(--line); color:var(--muted)}
 
-    footer{padding:36px 0;border-top:1px solid var(--line);background:#0a1221;color:#94a3b8}
-    footer .grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}
-    @media (max-width:980px){footer .grid{grid-template-columns:1fr}}
-    footer small{color:#6b7280}
+    /* Utilities */
+    .muted{color:var(--muted)}
+    .sep{height:1px; background:var(--line); margin:28px 0}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
   </style>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"ProfessionalService",
-    "name":"Estudio Contable – Apertura de LLC",
-    "areaServed":"Argentina",
-    "serviceType":"Apertura de LLC en Estados Unidos",
-    "availableService":["Asesoría tributaria","Apertura de LLC","Soporte bancario"],
-    "url":"https://tu-dominio.com",
-    "openingHours":"Mo-Su 08:00-20:00",
-    "sameAs":["https://www.linkedin.com"],
-    "brand":"LLC Argentina Pro"
-  }
-  </script>
 </head>
 <body>
-  <header class="site">
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <h1>LLC Argentina · Estudio Contable</h1>
-      </div>
-      <nav class="menu" aria-label="principal">
-        <a href="#servicios">Servicios</a>
-        <a href="#beneficios">Beneficios</a>
-        <a href="#quienes">Quiénes somos</a>
-        <a href="#agenda">Agenda</a>
-        <a class="cta" href="#agenda">Reservar</a>
+  <!-- Header / Nav -->
+  <header>
+    <div class="container nav" aria-label="Barra de navegación principal">
+      <div class="brand">Barcat & Asociados <small>Estudio Contable</small></div>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#nosotros">Sobre nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#agendar" class="btn" id="agendarTop">Agendar reunión</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <div class="grid">
-          <div>
-            <h2>Apertura de LLC en EE.UU. para argentinos, de forma segura y 100% online.</h2>
-            <p>Orden, claridad y acompañamiento profesional. Te guiamos paso a paso para constituir tu LLC y cumplir con tus obligaciones fiscales.</p>
-            <div class="badges">
-              <span class="b">Asesoría 1:1 por Meet</span>
-              <span class="b">Documentación guiada</span>
-              <span class="b">Enfoque práctico</span>
-            </div>
-            <p style="margin-top:18px"><a class="cta" href="#agenda">Agendar asesoría</a></p>
-          </div>
-          <div>
-            <div class="card">
-              <h3>Lo que obtenés</h3>
-              <div class="list">
-                <div class="item"><div class="dot"></div><div>Evaluación de viabilidad según tu actividad y riesgo.</div></div>
-                <div class="item"><div class="dot"></div><div>Checklist legal y fiscal para la apertura de LLC.</div></div>
-                <div class="item"><div class="dot"></div><div>Guía para cuentas bancarias y procesadores de pago.</div></div>
-                <div class="item"><div class="dot"></div><div>Plan de cumplimiento anual (impuestos y reportes).</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- Hero -->
+  <main id="inicio" class="hero">
+    <div class="container">
+      <h1>Impuestos y Auditorías con <em>seriedad</em>, <em>confianza</em> y <em>resultados</em>.</h1>
+      <p>Asesoramiento contable para pymes y profesionales. Cumplimiento fiscal, estados contables y reportes de auditoría con estándar profesional.</p>
+      <div class="actions">
+        <a href="#agendar" class="btn" id="agendarHero" aria-label="Agendar reunión por Google Calendar">Agendar reunión</a>
+        <a href="#contacto" class="btn" style="border-style:dashed" aria-label="Ir a la sección de contacto">Contactar</a>
       </div>
-    </section>
-
-    <!-- SERVICIOS -->
-    <section id="servicios" class="section">
-      <div class="container">
-        <h3>Servicios</h3>
-        <div class="grid-3">
-          <div class="card"><h4>Apertura de LLC</h4><p class="help">Constitución en el estado adecuado según tu caso.</p></div>
-          <div class="card"><h4>Soporte fiscal</h4><p class="help">Calendario de obligaciones y estimaciones de impuestos.</p></div>
-          <div class="card"><h4>Banca & pagos</h4><p class="help">Orientación para cuentas y pasarelas compatibles.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BENEFICIOS -->
-    <section id="beneficios" class="section">
-      <div class="container">
-        <h3>Beneficios</h3>
-        <div class="grid-3">
-          <div class="card"><strong>Operá global</strong><p class="help">Facturación internacional y reputación formal.</p></div>
-          <div class="card"><strong>Orden fiscal</strong><p class="help">Estructura prolija, baja fricción operativa.</p></div>
-          <div class="card"><strong>Acompañamiento</strong><p class="help">Soporte continuo y procesos claros.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- QUIENES SOMOS -->
-    <section id="quienes" class="section">
-      <div class="container grid-2">
-        <div>
-          <h3>Quiénes somos</h3>
-          <p>Estudio contable con foco en emprendedores y pymes. Trabajamos con metodología simple y responsable: primero entendemos tu caso, luego ejecutamos un plan con plazos y costos claros.</p>
-          <p class="help">Valores: honestidad, orden y prudencia profesional.</p>
-        </div>
-        <div class="card">
-          <h4>Preguntas frecuentes</h4>
-          <details><summary>¿Necesito viajar a EE.UU. para abrir la LLC?</summary><p class="help">No necesariamente. La mayoría de los casos se resuelven 100% online.</p></details>
-          <details><summary>¿Cuánto tarda el proceso?</summary><p class="help">Depende del estado, suele ser entre 1 y 3 semanas.</p></details>
-          <details><summary>¿Me ayudan con impuestos?</summary><p class="help">Sí, diseñamos un plan de cumplimiento anual y recordatorios.</p></details>
-        </div>
-      </div>
-    </section>
-
-    <!-- AGENDA / CONTACTO -->
-    <section id="agenda" class="section" aria-labelledby="agenda-title">
-      <div class="container grid-2">
-        <div>
-          <h3 id="agenda-title">Agenda tu asesoría (08–20 hs)</h3>
-          <div class="card">
-            <div class="calendar">
-              <div class="cal-header">
-                <button id="prevMonth" aria-label="Mes anterior">◀</button>
-                <div><strong id="monthLabel"></strong></div>
-                <button id="nextMonth" aria-label="Mes siguiente">▶</button>
-              </div>
-              <div class="cal-grid" id="dow"></div>
-              <div class="cal-grid" id="days"></div>
-            </div>
-            <div class="legend" aria-hidden="true">
-              <div class="dot free"></div><span class="help">Disponible</span>
-              <div class="dot busy"></div><span class="help">Ocupado</span>
-            </div>
-            <div id="slots" class="slots" aria-live="polite"></div>
-          </div>
-        </div>
-        <div>
-          <h3>Datos de contacto</h3>
-          <div class="card">
-            <form id="bookForm" autocomplete="on">
-              <input type="text" id="nombre" placeholder="Nombre y Apellido" required aria-label="Nombre y Apellido">
-              <input type="email" id="email" placeholder="Email" required aria-label="Correo electrónico">
-              <input type="tel" id="telefono" placeholder="Teléfono (opcional)" aria-label="Teléfono">
-              <textarea id="comentario" rows="4" placeholder="¿Algo que deba saber? (opcional)" aria-label="Comentario"></textarea>
-              <div class="help">La reunión se realiza por Google Meet. Te enviaremos el enlace por email al confirmar.</div>
-              <button class="primary" type="submit">Confirmar turno</button>
-              <div id="msg" role="status" aria-live="polite" style="min-height:1.2em"></div>
-            </form>
-          </div>
-          <p class="help" style="margin-top:10px">Al confirmar aceptás nuestras <a href="#">Condiciones</a> y <a href="#">Privacidad</a>.</p>
-        </div>
-      </div>
-    </section>
+    </div>
   </main>
 
+  <!-- Servicios -->
+  <section id="servicios" aria-labelledby="servicios-title">
+    <div class="container">
+      <h2 id="servicios-title">Servicios</h2>
+      <p class="sub">Lo esencial, hecho bien. Sin vueltas.</p>
+      <div class="grid">
+        <article class="card" aria-labelledby="impuestos-title">
+          <h3 id="impuestos-title">Impuestos</h3>
+          <p>Planificación y cumplimiento fiscal: AFIP, IVA, Ganancias, Bienes Personales, Regímenes de Información y más.</p>
+          <ul class="list">
+            <li>Alta y categorías (Monotributo / Responsable Inscripto)</li>
+            <li>Liquidaciones mensuales y anuales</li>
+            <li>Rentas provinciales y tasas municipales</li>
+            <li>Atención de fiscalizaciones</li>
+          </ul>
+        </article>
+        <article class="card" aria-labelledby="auditorias-title">
+          <h3 id="auditorias-title">Auditorías</h3>
+          <p>Revisión y aseguramiento de estados contables para empresas, fundaciones y proyectos que exigen fe pública.</p>
+          <ul class="list">
+            <li>Normas contables argentinas</li>
+            <li>Procedimientos analíticos y sustantivos</li>
+            <li>Informes e informes especiales</li>
+            <li>Acompañamiento a directorios y sindicaturas</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre nosotros -->
+  <section id="nosotros" aria-labelledby="nosotros-title">
+    <div class="container about">
+      <div class="box">
+        <h2 id="nosotros-title">Sobre Barcat & Asociados</h2>
+        <p>Estudio contable con foco en <strong>impuestos</strong> y <strong>auditorías</strong>. Trabajo serio, trato directo y compromiso con el cliente. Respetamos los procedimientos, cuidamos la documentación y damos la cara.</p>
+        <p class="muted">Ubicación: Tucumán, Argentina. Atención online y presencial por agenda.</p>
+      </div>
+      <div class="box">
+        <h3>Por qué elegirnos</h3>
+        <ul class="list">
+          <li>Rigor técnico y cumplimiento en tiempo y forma</li>
+          <li>Comunicación clara: lo que prometemos, lo entregamos</li>
+          <li>Confidencialidad y resguardo de la información</li>
+          <li>Agenda directa para reuniones por Google Meet</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" aria-labelledby="contacto-title">
+    <div class="container">
+      <h2 id="contacto-title">Contacto</h2>
+      <p class="sub">Escribinos y respondemos en el día hábil.</p>
+      <!-- ⚠️ Reemplazar el email y el teléfono con tus datos reales -->
+      <form id="contactForm" action="mailto:contacto@barcatyasociados.com" method="post" enctype="text/plain">
+        <div>
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="Nombre" type="text" placeholder="Tu nombre" required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="Email" type="email" placeholder="tu@email.com" required />
+        </div>
+        <div>
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="Mensaje" placeholder="Contanos brevemente qué necesitás" required></textarea>
+        </div>
+        <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap">
+          <button class="btn" type="submit">Enviar</button>
+          <a class="btn" href="https://wa.me/5493810000000" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">WhatsApp</a>
+        </div>
+        <p class="muted" style="margin-top:8px">Al enviar aceptás ser contactado con fines profesionales. No compartimos tus datos con terceros.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Agendar -->
+  <section id="agendar" aria-labelledby="agendar-title">
+    <div class="container">
+      <h2 id="agendar-title">Agendar reunión</h2>
+      <p class="sub">Botón directo a tu agenda. El cliente elige horario y recibe invitación. Simple.</p>
+      <div class="actions">
+        <button class="btn" id="agendarBtn" aria-label="Abrir agenda de Google Calendar">Abrir agenda</button>
+      </div>
+      <div class="sep"></div>
+      <p class="muted">¿Cómo funciona? Si tenés link de <em>Programación de citas</em> de Google Calendar, pegalo en el código (ver comentarios). Si no, abrimos un evento prellenado para que confirmes y actives Google Meet.</p>
+    </div>
+  </section>
+
   <footer>
-    <div class="container grid">
-      <div>
-        <strong>LLC Argentina · Estudio Contable</strong>
-        <p class="help">Apertura de LLC en Estados Unidos · Asesoría online</p>
-        <small>© <span id="y"></span> Todos los derechos reservados.</small>
-      </div>
-      <div>
-        <strong>Contacto</strong>
-        <p class="help"><a href="mailto:contacto@tu-dominio.com">contacto@tu-dominio.com</a><br/>WhatsApp: +54 9 …</p>
-      </div>
-      <div>
-        <strong>Links</strong>
-        <p class="help"><a href="#servicios">Servicios</a><br/><a href="#agenda">Reservar</a><br/><a href="#">Privacidad</a></p>
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap">
+        <span>© <span id="year"></span> Barcat & Asociados. Todos los derechos reservados.</span>
+        <span class="muted">Hecho en Tucumán.</span>
       </div>
     </div>
   </footer>
 
   <script>
-  // ======= CONFIG =======
-  const WEB_APP_URL = 'REEMPLAZAR_CON_TU_URL_DE_APPS_SCRIPT'; // p.ej.: https://script.google.com/macros/s/AKfycb.../exec
-  const SLOT_MINUTES = 30; // debe coincidir con Apps Script si querés 30/60
+    // ===== PERSONALIZACIÓN RÁPIDA =====
+    // 1) Pegá tu URL de "Programación de citas" (Google Calendar > Crear horario de citas > Copiar enlace público)
+    //    Ejemplo de formato: https://calendar.google.com/calendar/appointments/schedules/XXXXXXXXXXXXXXXX?gv=true
+    //    Si la dejás vacía, el botón abrirá un evento prellenado para que confirmes y agregues Google Meet manualmente.
+    const APPOINTMENT_URL = ""; // <- pegá aquí tu enlace público de citas
 
-  // ======= CALENDARIO =======
-  const monthLabel = document.getElementById('monthLabel');
-  const daysEl = document.getElementById('days');
-  const dowEl = document.getElementById('dow');
-  const slotsEl = document.getElementById('slots');
+    // 2) Contacto (WhatsApp / Email): reemplazá arriba en el <form> y en el botón de WhatsApp.
 
-  const DOW = ['Lu','Ma','Mi','Ju','Vi','Sa','Do'];
-  function pad(n){return (n<10?'0':'')+n}
-  function toISO(d){ return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`; }
-  function monthName(d){ return d.toLocaleDateString('es-AR', { month:'long', year:'numeric' }); }
-
-  let current = new Date(); current.setDate(1);
-  let selectedDateISO = null; // YYYY-MM-DD
-  let selectedTime = null;    // HH:mm
-
-  function renderDOW(){ dowEl.innerHTML=''; DOW.forEach(d=>{ const el=document.createElement('div'); el.className='dow'; el.textContent=d; dowEl.appendChild(el); }); }
-
-  function renderCalendar(){
-    monthLabel.textContent = monthName(current);
-    daysEl.innerHTML='';
-    const firstDow = (current.getDay() + 6) % 7; // 0=Lu
-    for(let i=0;i<firstDow;i++){ const ph=document.createElement('div'); daysEl.appendChild(ph); }
-    const lastDay = new Date(current.getFullYear(), current.getMonth()+1, 0).getDate();
-
-    for(let d=1; d<=lastDay; d++){
-      const date = new Date(current.getFullYear(), current.getMonth(), d);
-      const box = document.createElement('div'); box.className='day';
-      const num=document.createElement('div'); num.className='num'; num.textContent=d; box.appendChild(num);
-      const today = new Date(); today.setHours(0,0,0,0);
-      const isPast = date < today;
-      if (isPast) box.classList.add('disabled');
-      box.addEventListener('click', async ()=>{
-        if (isPast) return;
-        document.querySelectorAll('.day').forEach(el=>el.classList.remove('selected'));
-        box.classList.add('selected');
-        selectedDateISO = toISO(date);
-        selectedTime = null;
-        await loadSlots(selectedDateISO);
-      });
-      daysEl.appendChild(box);
-    }
-  }
-
-  async function loadSlots(dateISO){
-    slotsEl.innerHTML = '<div class="help">Cargando disponibilidad…</div>';
-    try {
-      const url = `${WEB_APP_URL}?action=availability&date=${encodeURIComponent(dateISO)}`;
-      const res = await fetch(url, { method:'GET' });
-      const data = await res.json();
-      if (!data.ok) throw new Error(data.error || 'Error de disponibilidad');
-      slotsEl.innerHTML = '';
-      data.slots.forEach(s=>{
-        const btn = document.createElement('button');
-        btn.type='button'; btn.textContent=s.time; btn.className='slot ' + (s.available ? 'free' : 'busy');
-        if (s.available){
-          btn.addEventListener('click', ()=>{
-            document.querySelectorAll('.slot.free').forEach(el=>el.classList.remove('selected'));
-            btn.classList.add('selected'); selectedTime = s.time;
-          });
+    // ===== NAVEGACIÓN SUAVE =====
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        if(id.length > 1){
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({behavior:'smooth', block:'start'});
         }
-        slotsEl.appendChild(btn);
       });
-    } catch (err){
-      slotsEl.innerHTML = `<div class="err">${err.message}</div>`;
+    });
+
+    // ===== AÑO FOOTER =====
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== AGENDA (Popup centrado) =====
+    function openPopup(url){
+      const w = 1040, h = 780;
+      const dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : window.screenX;
+      const dualScreenTop = window.screenTop !== undefined ? window.screenTop : window.screenY;
+      const width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+      const height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+      const left = ((width - w) / 2) + dualScreenLeft;
+      const top = ((height - h) / 2) + dualScreenTop;
+      const features = `scrollbars=yes, width=${w}, height=${h}, top=${top}, left=${left}`;
+      const popup = window.open(url, '_blank', features);
+      if(!popup){ window.location.href = url; } // Fallback si el popup es bloqueado
     }
-  }
 
-  renderDOW();
-  renderCalendar();
-  document.getElementById('prevMonth').onclick = ()=>{ current.setMonth(current.getMonth()-1); renderCalendar(); };
-  document.getElementById('nextMonth').onclick = ()=>{ current.setMonth(current.getMonth()+1); renderCalendar(); };
+    // ===== URL de plantilla de evento (prellenado) =====
+    function buildCalendarTemplate(){
+      // Prefill básico. El usuario elige fecha/hora y añade Google Meet con un clic.
+      const base = 'https://calendar.google.com/calendar/u/0/r/eventedit';
+      const params = new URLSearchParams({
+        text: 'Reunión con Barcat & Asociados',
+        details: 'Consulta inicial (30 minutos). Por favor, al confirmar, activá Google Meet en el evento.',
+        location: 'Google Meet',
+      });
+      return `${base}?${params.toString()}`;
+    }
 
-  // ======= RESERVA =======
-  const form = document.getElementById('bookForm');
-  const msg = document.getElementById('msg');
-  form.addEventListener('submit', async (e)=>{
-    e.preventDefault();
-    msg.textContent='';
-    if (!selectedDateISO){ msg.innerHTML='<div class="err">Elegí una fecha.</div>'; return; }
-    if (!selectedTime){ msg.innerHTML='<div class="err">Elegí un horario.</div>'; return; }
+    function openScheduler(){
+      const url = APPOINTMENT_URL && APPOINTMENT_URL.startsWith('http') ? APPOINTMENT_URL : buildCalendarTemplate();
+      openPopup(url);
+    }
 
-    const payload = {
-      fecha_iso: selectedDateISO,
-      hora: selectedTime,
-      nombre: document.getElementById('nombre').value.trim(),
-      email: document.getElementById('email').value.trim(),
-      telefono: document.getElementById('telefono').value.trim(),
-      comentario: document.getElementById('comentario').value.trim(),
-    };
-    if (!payload.nombre || !payload.email){ msg.innerHTML='<div class="err">Completá nombre y email.</div>'; return; }
+    document.getElementById('agendarBtn').addEventListener('click', openScheduler);
+    document.getElementById('agendarTop').addEventListener('click', (e)=>{ e.preventDefault(); openScheduler(); });
+    document.getElementById('agendarHero').addEventListener('click', (e)=>{ e.preventDefault(); openScheduler(); });
 
-    try{
-      const res = await fetch(`${WEB_APP_URL}?action=book`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
-      const data = await res.json();
-      if (!data.ok) throw new Error(data.error || 'No se pudo reservar');
-      msg.innerHTML = `<div class="ok">Turno confirmado para <strong>${payload.fecha_iso}</strong> a las <strong>${payload.hora}</strong>. ${data.booked.meet_link?`<br>Meet: <a href="${data.booked.meet_link}" target="_blank" rel="noopener">Abrir enlace</a>`:''}</div>`;
-      await loadSlots(payload.fecha_iso);
-      form.reset();
-    }catch(err){ msg.innerHTML = `<div class="err">${err.message}</div>`; }
-  });
-
-  // year
-  document.getElementById('y').textContent = new Date().getFullYear();
+    // ===== Validación simple de formulario (cliente) =====
+    document.getElementById('contactForm').addEventListener('submit', function(){
+      // Solo mejora UX (el envío lo maneja mailto o tu backend si lo agregás)
+      const nombre = document.getElementById('nombre').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mensaje = document.getElementById('mensaje').value.trim();
+      if(!nombre || !email || !mensaje){
+        alert('Completá todos los campos.');
+      }
+    });
   </script>
 </body>
 </html>
