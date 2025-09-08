@@ -1,48 +1,312 @@
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Puedo emitir Factura E por servicios?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Configuramos tu punto de venta “E” en AFIP y emitís comprobantes al exterior sin IVA. La renta se declara según tu encuadre (Monotributo o Responsable Inscripto)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Un monotributista puede exportar servicios?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Puede facturar con tipo “E”. No se discrimina IVA, pero esos ingresos cuentan para el tope anual del régimen. Si superás límites, te asesoramos para recategorizar a tiempo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo cobro desde el exterior?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Transferencias bancarias internacionales o PSP regulados. Priorizamos circuitos formales, trazables y acordes a normativa cambiaria vigente."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuánto tarda habilitar la Factura E?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Con CUIT y clave fiscal activos, la configuración suele resolverse entre 24 y 72 horas hábiles (alta de punto de venta, servicios AFIP y pruebas de emisión)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué documentación necesito conservar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Contrato/orden de compra, Facturas E, constancias de cobro, comunicaciones con el cliente y respaldo de la prestación (entregables)."
-      }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estudio contable Dip | Impuestos, Planificación Fiscal y Exportación de Servicios</title>
+  <meta name="description" content="Impuestos y planificación fiscal para pymes y profesionales. Alta y liquidaciones AFIP, regímenes de información, defensa ante fiscalizaciones y exportación de servicios con Factura E y cobro del exterior." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff; --fg:#0a0a0a; --muted:#666666; --line:#e8e8e8; --accent:#0a0a0a; --focus:#000000;
+      --maxw:1040px; --radius:16px; --pad:18px;
     }
-  ]
-}
-</script>
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; background:var(--bg); color:var(--fg); font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif; line-height:1.5}
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; height:auto; display:block}
+    .container{max-width:var(--maxw); margin-inline:auto; padding-inline:var(--pad)}
+
+    /* Header / Nav */
+    header{position:sticky; top:0; z-index:50; background:var(--bg); border-bottom:1px solid var(--line)}
+    .nav{display:flex; align-items:center; justify-content:space-between; min-height:64px}
+
+    .brand{display:flex; align-items:center; gap:10px}
+    .logo{height:28px; width:auto; border-radius:6px}
+    .brand-text{font-weight:700; letter-spacing:.3px; white-space:nowrap}
+    .brand-text small{font-weight:500; color:var(--muted)}
+    @media(min-width:900px){.logo{height:32px}}
+
+    .menu-btn{display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border:1px solid var(--line); border-radius:10px; background:#fff}
+    .menu-btn:focus{outline:2px solid #000}
+    @media(min-width:900px){.menu-btn{display:none}}
+
+    nav{position:relative}
+    #primaryNav{display:none}
+    #primaryNav.show{display:flex; flex-direction:column; position:absolute; right:0; top:56px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px; gap:6px; min-width:260px; box-shadow:0 12px 40px rgba(0,0,0,.08)}
+    #primaryNav a{padding:10px 12px; border-radius:10px}
+    #primaryNav a:hover{background:#f6f6f6}
+    @media(min-width:900px){
+      #primaryNav{display:flex; position:static; flex-direction:row; align-items:center; background:transparent; border:none; box-shadow:none; padding:0; gap:18px; min-width:auto}
+    }
+
+    .btn{display:inline-block; padding:12px 18px; border:1px solid var(--fg); border-radius:999px; font-weight:600; text-align:center}
+    .btn:hover{background:var(--fg); color:#fff}
+
+    /* Hero */
+    .hero{padding:56px 0 32px}
+    .hero h1{font-size:clamp(26px,5.2vw,40px); line-height:1.15; margin:0 0 12px}
+    .hero p{color:var(--muted); margin:0 0 18px}
+    .actions{display:flex; gap:12px; flex-wrap:wrap}
+
+    /* Sections */
+    section{padding:48px 0; border-top:1px solid var(--line)}
+    h2{font-size:clamp(22px,4vw,30px); margin:0 0 8px}
+    .sub{color:var(--muted); margin:0 0 20px}
+
+    /* Services */
+    .grid{display:grid; grid-template-columns:1fr; gap:16px}
+    @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
+    .card{border:1px solid var(--line); border-radius:var(--radius); padding:20px}
+    .card h3{margin:0 0 8px}
+    .card p{margin:0; color:var(--muted)}
+    .list{margin:12px 0 0; padding:0 0 0 18px}
+
+    /* About */
+    .about{display:grid; gap:20px; grid-template-columns:1fr}
+    @media(min-width:900px){.about{grid-template-columns:1.1fr .9fr}}
+    .about .box{border:1px solid var(--line); border-radius:var(--radius); padding:20px}
+
+    /* Contact */
+    form{display:grid; gap:12px; max-width:680px}
+    label{font-weight:600; font-size:14px}
+    input, textarea{width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:12px; font:inherit; background:#fff}
+    textarea{min-height:120px}
+    input:focus, textarea:focus{outline:2px solid #000; outline-offset:0}
+
+    /* Footer */
+    footer{padding:36px 0; border-top:1px solid var(--line); color:var(--muted)}
+
+    /* Utilities */
+    .muted{color:var(--muted)}
+    .sep{height:1px; background:var(--line); margin:28px 0}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+  </style>
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header>
+    <div class="container nav" aria-label="Barra de navegación principal">
+      <div class="brand">
+        <img src="image.png" alt="estudio contable dip" class="logo"/>
+        <div class="brand-text">Estudio contable Dip <small>Impuestos</small></div>
+      </div>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-controls="primaryNav" aria-expanded="false">☰</button>
+
+      <nav>
+        <ul id="primaryNav">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#nosotros">Sobre nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#agendar" class="btn" id="agendarTop">Agendar reunión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="inicio" class="hero">
+    <div class="container">
+      <h1>Impuestos, <em>Planificación Fiscal</em> y Exportación de Servicios.</h1>
+      <p>Asesoramiento tributario para pymes y profesionales: altas, liquidaciones, regímenes de información, defensa ante fiscalizaciones y operaciones con clientes del exterior (Factura E y cobros internacionales).</p>
+      <div class="actions">
+        <a href="#agendar" class="btn" id="agendarHero" aria-label="Agendar reunión por Google Calendar">Agendar reunión</a>
+        <a href="#contacto" class="btn" style="border-style:dashed" aria-label="Ir a la sección de contacto">Contactar</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Servicios -->
+  <section id="servicios" aria-labelledby="servicios-title">
+    <div class="container">
+      <h2 id="servicios-title">Servicios</h2>
+      <p class="sub">Impuestos, planificación fiscal y exportación de servicios. Sin vueltas.</p>
+
+      <div class="grid">
+        <!-- Impuestos -->
+        <article class="card" aria-labelledby="impuestos-title">
+          <h3 id="impuestos-title">Impuestos</h3>
+          <p>Planificación y cumplimiento fiscal ante AFIP y fiscos provinciales.</p>
+          <ul class="list">
+            <li>Altas y categorizaciones (Monotributo / Responsable Inscripto)</li>
+            <li>Liquidaciones mensuales y anuales (IVA, Ganancias, Bienes Personales)</li>
+            <li>Regímenes de información, percepciones y retenciones</li>
+            <li>Atención de requerimientos y fiscalizaciones</li>
+          </ul>
+        </article>
+
+        <!-- Planificación Fiscal -->
+        <article class="card" aria-labelledby="planfiscal-title">
+          <h3 id="planfiscal-title">Planificación Fiscal</h3>
+          <p>Organización tributaria para pagar lo justo, cumpliendo la ley.</p>
+          <ul class="list">
+            <li>Elección de figura y encuadre óptimo</li>
+            <li>Proyección de cargas y cashflow impositivo</li>
+            <li>Beneficios y regímenes especiales aplicables</li>
+            <li>Checklist de cumplimiento y calendario de vencimientos</li>
+          </ul>
+        </article>
+
+        <!-- Exportación de servicios -->
+        <article class="card" aria-labelledby="export-title">
+          <h3 id="export-title">Exportación de servicios</h3>
+          <p>Te armamos el circuito completo para vender tus servicios al exterior de forma correcta.</p>
+          <ul class="list">
+            <li>Alta y configuración para emitir <strong>Factura E</strong> (AFIP)</li>
+            <li>Criterios de exportación de servicios y encuadre impositivo</li>
+            <li>Modalidades de cobro internacional (bancos/PSP) y trazabilidad</li>
+            <li>Tratamiento impositivo local de los ingresos del exterior</li>
+            <li>Documentación soporte y comprobantes exigibles</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre nosotros -->
+  <section id="nosotros" aria-labelledby="nosotros-title">
+    <div class="container about">
+      <div class="box">
+        <h2 id="nosotros-title">Sobre Estudio contable Dip</h2>
+        <p>Estudio enfocado en <strong>impuestos</strong>, <strong>planificación fiscal lícita</strong> y <strong>exportación de servicios</strong>. Trabajo serio, trato directo y compromiso con el cumplimiento. Respetamos los procedimientos, cuidamos la documentación y damos la cara.</p>
+        <p class="muted">Ubicación: Tucumán, Argentina. Atención online y presencial por agenda.</p>
+      </div>
+      <div class="box">
+        <h3>Por qué elegirnos</h3>
+        <ul class="list">
+          <li>Orden y previsibilidad: calendario impositivo claro</li>
+          <li>Comunicación directa y sin tecnicismos innecesarios</li>
+          <li>Confidencialidad y resguardo de la información</li>
+          <li>Experiencia con freelancers y pymes que facturan al exterior</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" aria-labelledby="contacto-title">
+    <div class="container">
+      <h2 id="contacto-title">Contacto</h2>
+      <p class="sub">Escribinos y respondemos en el día hábil.</p>
+      <form id="contactForm" action="estudiocontabledip1@gmail.com" method="post" enctype="text/plain">
+        <div>
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="Nombre" type="text" placeholder="Tu nombre" required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="Email" type="email" placeholder="tu@email.com" required />
+        </div>
+        <div>
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="Mensaje" placeholder="Contanos brevemente qué necesitás (ej.: Factura E, cobro exterior, liquidaciones)" required></textarea>
+        </div>
+        <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap">
+          <button class="btn" type="submit">Enviar</button>
+          <a class="btn" href="https://wa.me/5493810000000" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">WhatsApp</a>
+        </div>
+        <p class="muted" style="margin-top:8px">Al enviar aceptás ser contactado con fines profesionales. No compartimos tus datos con terceros.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Agendar -->
+  <section id="agendar" aria-labelledby="agendar-title">
+    <div class="container">
+      <h2 id="agendar-title">Agendar reunión</h2>
+      <p class="sub">Botón directo a tu agenda. El cliente elige horario y recibe invitación. Simple.</p>
+      <div class="actions">
+        <button class="btn" id="agendarBtn" aria-label="Abrir agenda de Google Calendar">Abrir agenda</button>
+      </div>
+      <div class="sep"></div>
+      <p class="muted">Si tenés link de <em>Programación de citas</em> de Google Calendar, pegalo en el código. Caso contrario, abrimos un evento prellenado para confirmar y activar Google Meet.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap">
+        <span>© <span id="year"></span> Estudio contable Dip. Todos los derechos reservados.</span>
+        <span class="muted">Hecho en Tucumán.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== PERSONALIZACIÓN RÁPIDA =====
+    const APPOINTMENT_URL = ""; // <- pegá aquí tu enlace público de citas
+
+    // ===== NAVEGACIÓN SUAVE =====
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        if(id.length > 1){
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+
+    // ===== AÑO FOOTER =====
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== MENU MOBILE =====
+    const menuBtn = document.getElementById('menuBtn');
+    const primaryNav = document.getElementById('primaryNav');
+    menuBtn.addEventListener('click', ()=>{
+      const open = primaryNav.classList.toggle('show');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    primaryNav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+      if(window.innerWidth < 900){ primaryNav.classList.remove('show'); menuBtn.setAttribute('aria-expanded','false'); }
+    }));
+
+    // ===== AGENDA (Popup centrado) =====
+    function openPopup(url){
+      const w = 1040, h = 780;
+      const dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : window.screenX;
+      const dualScreenTop = window.screenTop !== undefined ? window.screenTop : window.screenY;
+      const width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+      const height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+      const left = ((width - w) / 2) + dualScreenLeft;
+      const top = ((height - h) / 2) + dualScreenTop;
+      const features = `scrollbars=yes, width=${w}, height=${h}, top=${top}, left=${left}`;
+      const popup = window.open(url, '_blank', features);
+      if(!popup){ window.location.href = url; }
+    }
+
+    function buildCalendarTemplate(){
+      const base = 'https://calendar.google.com/calendar/u/0/r/eventedit';
+      const params = new URLSearchParams({
+        text: 'Reunión con Estudio contable Dip',
+        details: 'Consulta impositiva (30 minutos). Indicar si necesitás Factura E / cobro exterior. Al confirmar, activá Google Meet.',
+        location: 'Google Meet',
+      });
+      return `${base}?${params.toString()}`;
+    }
+
+    function openScheduler(){
+      const url = APPOINTMENT_URL && APPOINTMENT_URL.startsWith('http') ? APPOINTMENT_URL : buildCalendarTemplate();
+      openPopup(url);
+    }
+
+    document.getElementById('agendarBtn').addEventListener('click', openScheduler);
+    document.getElementById('agendarTop').addEventListener('click', (e)=>{ e.preventDefault(); openScheduler(); });
+    document.getElementById('agendarHero').addEventListener('click', (e)=>{ e.preventDefault(); openScheduler(); });
+
+    // ===== Validación simple de formulario (cliente) =====
+    document.getElementById('contactForm').addEventListener('submit', function(){
+      const nombre = document.getElementById('nombre').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mensaje = document.getElementById('mensaje').value.trim();
+      if(!nombre || !email || !mensaje){
+        alert('Completá todos los campos.');
+      }
+    });
+  </script>
+</body>
+</html>
