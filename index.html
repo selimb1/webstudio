@@ -52,8 +52,21 @@
     .burger{display:none;background:none;border:none}
 
     /* Hero */
+    @keyframes fadeUp{
+      0%{opacity:0;transform:translateY(24px);animation-timing-function:ease-out}
+      70%{opacity:1;transform:translateY(-8px);animation-timing-function:ease-out}
+      100%{opacity:1;transform:translateY(0);animation-timing-function:ease-out}
+    }
+    @keyframes cardFloat{
+      0%{transform:translateY(0);animation-timing-function:ease-out}
+      50%{transform:translateY(-8px)}
+      100%{transform:translateY(8px);animation-timing-function:ease-out}
+    }
     .hero{background:linear-gradient(180deg,var(--gray-100),#fff);border-bottom:1px solid var(--gray-200)}
     .hero-wrap{max-width:var(--maxw);margin:0 auto;padding:3.5rem 1rem;display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+    .hero-wrap>div,
+    .hero-card{opacity:0;transform:translateY(24px);animation:fadeUp .8s var(--ease,cubic-bezier(.22,1,.36,1)) forwards}
+    .hero-wrap>div{animation-delay:0s}
     .kicker{color:var(--brand-500);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}
     .h1{font-size:clamp(2rem,4vw,3rem);line-height:1.15;margin:.5rem 0;color:var(--brand-900)}
     .sub{color:var(--gray-700);font-size:1.05rem;margin-bottom:1.5rem}
@@ -63,9 +76,13 @@
     .btn-primary:hover{background:var(--brand-500)}
     .btn-ghost{border-color:var(--gray-300);color:var(--gray-700)}
     .btn-ghost:hover{border-color:var(--brand-500);color:var(--brand-700)}
-    .hero-card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius-xl);padding:1.25rem;box-shadow:var(--shadow-md)}
+    .hero-card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius-xl);padding:1.25rem;box-shadow:var(--shadow-md);will-change:transform;animation:fadeUp .8s var(--ease,cubic-bezier(.22,1,.36,1)) forwards,cardFloat 6s ease-in-out 1s infinite alternate;animation-delay:.15s,1s}
     .hero-card h3{margin:.25rem 0 0.5rem;color:var(--brand-900)}
     .hero-list{margin:0;padding-left:1.1rem;color:var(--gray-700)}
+    @media (prefers-reduced-motion: reduce){
+      .hero-wrap>div,
+      .hero-card{animation:none;opacity:1;transform:none}
+    }
 
     /* Sections */
     section{padding:3.5rem 1rem}
