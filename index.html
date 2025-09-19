@@ -3,310 +3,423 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Estudio contable Dip | Impuestos, Planificación Fiscal y Exportación de Servicios</title>
-  <meta name="description" content="Impuestos y planificación fiscal para pymes y profesionales. Alta y liquidaciones AFIP, regímenes de información, defensa ante fiscalizaciones y exportación de servicios con Factura E y cobro del exterior." />
+  <title>Estudio Contable DIP | Tu aliado contable en Argentina y el mundo</title>
+  <meta name="description" content="Estudio Contable DIP: soluciones contables, fiscales y financieras para pymes, freelancers y emprendedores. Auditoría, impuestos, contabilidad, sociedades y consultoría laboral." />
+  <meta name="robots" content="index,follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" />
+  <meta property="og:title" content="Estudio Contable DIP" />
+  <meta property="og:description" content="Tu aliado contable en Argentina y el mundo." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.estudiocontabledip.com" />
+  <meta property="og:image" content="/og-image.jpg" />
   <style>
     :root{
-      --bg:#ffffff; --fg:#0a0a0a; --muted:#666666; --line:#e8e8e8; --accent:#0a0a0a; --focus:#000000;
-      --maxw:1040px; --radius:16px; --pad:18px;
+      --brand-900:#0B2740; /* azul oscuro */
+      --brand-700:#123B63;
+      --brand-500:#1E64A3; /* acento moderado */
+      --gray-900:#0f172a;
+      --gray-700:#334155;
+      --gray-500:#64748b;
+      --gray-300:#cbd5e1;
+      --gray-200:#e2e8f0;
+      --gray-100:#f1f5f9;
+      --white:#ffffff;
+      --radius-xl:1.25rem;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.06);
+      --shadow-md:0 8px 30px rgba(0,0,0,.08);
+      --maxw:1200px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0; padding:0; background:var(--bg); color:var(--fg); font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif; line-height:1.5}
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; height:auto; display:block}
-    .container{max-width:var(--maxw); margin-inline:auto; padding-inline:var(--pad)}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--gray-900);background:var(--white);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
 
-    /* Header / Nav */
-    header{position:sticky; top:0; z-index:50; background:var(--bg); border-bottom:1px solid var(--line)}
-    .nav{display:flex; align-items:center; justify-content:space-between; min-height:64px}
-
-    .brand{display:flex; align-items:center; gap:10px}
-    .logo{height:28px; width:auto; border-radius:6px}
-    .brand-text{font-weight:700; letter-spacing:.3px; white-space:nowrap}
-    .brand-text small{font-weight:500; color:var(--muted)}
-    @media(min-width:900px){.logo{height:32px}}
-
-    .menu-btn{display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border:1px solid var(--line); border-radius:10px; background:#fff}
-    .menu-btn:focus{outline:2px solid #000}
-    @media(min-width:900px){.menu-btn{display:none}}
-
-    nav{position:relative}
-    #primaryNav{display:none}
-    #primaryNav.show{display:flex; flex-direction:column; position:absolute; right:0; top:56px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px; gap:6px; min-width:260px; box-shadow:0 12px 40px rgba(0,0,0,.08)}
-    #primaryNav a{padding:10px 12px; border-radius:10px}
-    #primaryNav a:hover{background:#f6f6f6}
-    @media(min-width:900px){
-      #primaryNav{display:flex; position:static; flex-direction:row; align-items:center; background:transparent; border:none; box-shadow:none; padding:0; gap:18px; min-width:auto}
-    }
-
-    .btn{display:inline-block; padding:12px 18px; border:1px solid var(--fg); border-radius:999px; font-weight:600; text-align:center}
-    .btn:hover{background:var(--fg); color:#fff}
+    /* Header */
+    .header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--gray-200)}
+    .nav{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem}
+    .brand{display:flex;gap:.75rem;align-items:center;font-weight:700}
+    .brand-logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand-900),var(--brand-700));display:grid;place-items:center;color:#fff;box-shadow:var(--shadow-sm)}
+    .brand-logo span{font-size:0.95rem;letter-spacing:.5px}
+    .menu{display:flex;gap:1.25rem;align-items:center}
+    .menu a{color:var(--gray-700);font-weight:500}
+    .menu a:hover{color:var(--brand-700)}
+    .cta{padding:.6rem 1rem;background:var(--brand-700);color:#fff;border-radius:999px;font-weight:600;box-shadow:var(--shadow-sm)}
+    .cta:hover{background:var(--brand-500)}
+    .burger{display:none;background:none;border:none}
 
     /* Hero */
-    .hero{padding:56px 0 32px}
-    .hero h1{font-size:clamp(26px,5.2vw,40px); line-height:1.15; margin:0 0 12px}
-    .hero p{color:var(--muted); margin:0 0 18px}
-    .actions{display:flex; gap:12px; flex-wrap:wrap}
+    .hero{background:linear-gradient(180deg,var(--gray-100),#fff);border-bottom:1px solid var(--gray-200)}
+    .hero-wrap{max-width:var(--maxw);margin:0 auto;padding:3.5rem 1rem;display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+    .kicker{color:var(--brand-500);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}
+    .h1{font-size:clamp(2rem,4vw,3rem);line-height:1.15;margin:.5rem 0;color:var(--brand-900)}
+    .sub{color:var(--gray-700);font-size:1.05rem;margin-bottom:1.5rem}
+    .hero-actions{display:flex;gap:1rem;align-items:center}
+    .btn{padding:.85rem 1.15rem;border-radius:12px;font-weight:600;border:1px solid transparent;display:inline-flex;align-items:center;gap:.5rem}
+    .btn-primary{background:var(--brand-700);color:#fff}
+    .btn-primary:hover{background:var(--brand-500)}
+    .btn-ghost{border-color:var(--gray-300);color:var(--gray-700)}
+    .btn-ghost:hover{border-color:var(--brand-500);color:var(--brand-700)}
+    .hero-card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius-xl);padding:1.25rem;box-shadow:var(--shadow-md)}
+    .hero-card h3{margin:.25rem 0 0.5rem;color:var(--brand-900)}
+    .hero-list{margin:0;padding-left:1.1rem;color:var(--gray-700)}
 
     /* Sections */
-    section{padding:48px 0; border-top:1px solid var(--line)}
-    h2{font-size:clamp(22px,4vw,30px); margin:0 0 8px}
-    .sub{color:var(--muted); margin:0 0 20px}
+    section{padding:3.5rem 1rem}
+    .wrap{max-width:var(--maxw);margin:0 auto}
+    .section-title{font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 1rem;color:var(--brand-900)}
+    .section-sub{margin:0 0 2rem;color:var(--gray-700)}
 
-    /* Services */
-    .grid{display:grid; grid-template-columns:1fr; gap:16px}
-    @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
-    .card{border:1px solid var(--line); border-radius:var(--radius); padding:20px}
-    .card h3{margin:0 0 8px}
-    .card p{margin:0; color:var(--muted)}
-    .list{margin:12px 0 0; padding:0 0 0 18px}
+    /* Servicios */
+    .grid{display:grid;gap:1.25rem}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .card{background:#fff;border:1px solid var(--gray-200);border-radius:16px;padding:1.25rem;box-shadow:var(--shadow-sm)}
+    .card h3{margin:.25rem 0 .5rem}
+    .card p{margin:0;color:var(--gray-700)}
+    .icon{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--brand-700),var(--brand-500));display:grid;place-items:center;color:#fff;margin-bottom:.75rem}
 
-    /* About */
-    .about{display:grid; gap:20px; grid-template-columns:1fr}
-    @media(min-width:900px){.about{grid-template-columns:1.1fr .9fr}}
-    .about .box{border:1px solid var(--line); border-radius:var(--radius); padding:20px}
+    /* Nosotros */
+    .about{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem}
+    .vals{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .val{background:var(--gray-100);border:1px solid var(--gray-200);padding:1rem;border-radius:12px;text-align:center}
 
-    /* Contact */
-    form{display:grid; gap:12px; max-width:680px}
-    label{font-weight:600; font-size:14px}
-    input, textarea{width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:12px; font:inherit; background:#fff}
-    textarea{min-height:120px}
-    input:focus, textarea:focus{outline:2px solid #000; outline-offset:0}
+    /* Clientes / Confianza */
+    .trust{display:grid;grid-template-columns:1fr;gap:1rem;align-items:center}
+    .logos{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;opacity:.8}
+    .logo-ph{height:40px;border:1px dashed var(--gray-300);border-radius:10px;display:grid;place-items:center;color:var(--gray-500);font-size:.9rem}
+
+    /* Blog */
+    .blog{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    .post{background:#fff;border:1px solid var(--gray-200);border-radius:16px;overflow:hidden}
+    .post img{aspect-ratio:16/9;object-fit:cover}
+    .post .pbody{padding:1rem}
+    .post h4{margin:.25rem 0 .5rem}
+
+    /* Contacto */
+    .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem}
+    .form{background:#fff;border:1px solid var(--gray-200);border-radius:16px;padding:1.25rem}
+    .form .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    label{display:block;font-weight:600;color:var(--gray-700);margin:.25rem 0}
+    input, textarea{width:100%;padding:.8rem;border:1px solid var(--gray-300);border-radius:10px;font:inherit}
+    textarea{min-height:140px;resize:vertical}
+    .small{font-size:.85rem;color:var(--gray-500)}
+    .map{border:0;width:100%;height:100%;min-height:320px;border-radius:16px;box-shadow:var(--shadow-sm)}
 
     /* Footer */
-    footer{padding:36px 0; border-top:1px solid var(--line); color:var(--muted)}
+    footer{background:var(--brand-900);color:#dbeafe}
+    .footer-wrap{max-width:var(--maxw);margin:0 auto;padding:2rem 1rem;display:grid;grid-template-columns:1.2fr .8fr;gap:2rem}
+    .socials{display:flex;gap:.75rem;flex-wrap:wrap}
+    .socials a{background:#0e2f50;color:#fff;padding:.5rem .75rem;border-radius:999px;font-weight:600}
+    .legal{border-top:1px solid rgba(255,255,255,.12);padding:1rem;color:#cbd5e1;text-align:center}
 
-    /* Utilities */
-    .muted{color:var(--muted)}
-    .sep{height:1px; background:var(--line); margin:28px 0}
-    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+    /* Responsive */
+    @media (max-width: 1024px){
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      .blog{grid-template-columns:repeat(2,1fr)}
+      .about,.contact,.hero-wrap{grid-template-columns:1fr}
+    }
+    @media (max-width: 720px){
+      .menu{display:none;position:absolute;top:64px;right:1rem;left:1rem;background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:1rem;flex-direction:column;box-shadow:var(--shadow-md)}
+      .menu.open{display:flex}
+      .burger{display:inline-flex}
+      .grid-3{grid-template-columns:1fr}
+      .logos{grid-template-columns:repeat(2,1fr)}
+      .blog{grid-template-columns:1fr}
+      .form .row{grid-template-columns:1fr}
+    }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AccountingService",
+    "name": "Estudio Contable DIP",
+    "url": "https://www.estudiocontabledip.com",
+    "logo": "https://www.estudiocontabledip.com/logo.png",
+    "areaServed": ["Argentina", "Tucumán"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Concepción",
+      "addressRegion": "Tucumán",
+      "addressCountry": "AR"
+    },
+    "sameAs": [
+      "https://www.instagram.com/estudiocontabledip",
+      "https://www.linkedin.com/company/estudiocontabledip"
+    ],
+    "description": "Soluciones contables, fiscales y financieras para pymes, freelancers y emprendedores.",
+    "serviceOffer": [
+      "Contabilidad e informes financieros",
+      "Auditoría externa e interna",
+      "Impuestos nacionales y provinciales",
+      "Consultoría laboral y previsional",
+      "Sociedades: constitución y asesoramiento legal-contable",
+      "Gestión y planificación fiscal"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <!-- Header / Nav -->
-  <header>
-    <div class="container nav" aria-label="Barra de navegación principal">
-      <div class="brand">
-        <img src="image.png" alt="estudio contable dip" class="logo"/>
-        <div class="brand-text">Estudio contable Dip <small>Impuestos</small></div>
+  <!-- Header / Navbar -->
+  <header class="header" aria-label="Barra de navegación">
+    <nav class="nav">
+      <a href="#inicio" class="brand" aria-label="Inicio Estudio Contable DIP">
+        <div class="brand-logo" aria-hidden="true"><span>DIP</span></div>
+        <div>Estudio Contable DIP</div>
+      </a>
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18M3 12h18M3 18h18" stroke="#0b2740" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="menu" id="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#blog">Blog</a>
+        <a href="#contacto">Contacto</a>
+        <a class="cta" href="#contacto">Agendá tu consulta</a>
       </div>
-
-      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-controls="primaryNav" aria-expanded="false">☰</button>
-
-      <nav>
-        <ul id="primaryNav">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#nosotros">Sobre nosotros</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-          <li><a href="#agendar" class="btn" id="agendarTop">Agendar reunión</a></li>
-        </ul>
-      </nav>
-    </div>
+    </nav>
   </header>
 
   <!-- Hero -->
-  <main id="inicio" class="hero">
-    <div class="container">
-      <h1>Impuestos, <em>Planificación Fiscal</em> y Exportación de Servicios.</h1>
-      <p>Asesoramiento tributario para pymes y profesionales: altas, liquidaciones, regímenes de información, defensa ante fiscalizaciones y operaciones con clientes del exterior (Factura E y cobros internacionales).</p>
-      <div class="actions">
-        <a href="#agendar" class="btn" id="agendarHero" aria-label="Agendar reunión por Google Calendar">Agendar reunión</a>
-        <a href="#contacto" class="btn" style="border-style:dashed" aria-label="Ir a la sección de contacto">Contactar</a>
+  <section class="hero" id="inicio">
+    <div class="hero-wrap">
+      <div>
+        <div class="kicker">Estudio profesional</div>
+        <h1 class="h1">Tu aliado contable en Argentina y el mundo</h1>
+        <p class="sub">Ofrecemos soluciones contables, fiscales y financieras para pymes, freelancers y emprendedores. Seriedad, cercanía y resultados medibles.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contacto" aria-label="Solicitá tu consulta">Solicitá tu consulta</a>
+          <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+        </div>
       </div>
+      <aside class="hero-card" aria-label="Diferenciales del estudio">
+        <h3>¿Por qué DIP?</h3>
+        <ul class="hero-list">
+          <li>Respuestas claras y en tiempo.</li>
+          <li>Cumplimiento normativo AFIP & DGR Tucumán.</li>
+          <li>Optimización fiscal con enfoque preventivo.</li>
+          <li>Acompañamiento 100% online si lo necesitás.</li>
+        </ul>
+      </aside>
     </div>
-  </main>
+  </section>
 
   <!-- Servicios -->
   <section id="servicios" aria-labelledby="servicios-title">
-    <div class="container">
-      <h2 id="servicios-title">Servicios</h2>
-      <p class="sub">Impuestos, planificación fiscal y exportación de servicios. Sin vueltas.</p>
-
-      <div class="grid">
-        <!-- Impuestos -->
-        <article class="card" aria-labelledby="impuestos-title">
-          <h3 id="impuestos-title">Impuestos</h3>
-          <p>Planificación y cumplimiento fiscal ante AFIP y fiscos provinciales.</p>
-          <ul class="list">
-            <li>Altas y categorizaciones (Monotributo / Responsable Inscripto)</li>
-            <li>Liquidaciones mensuales y anuales (IVA, Ganancias, Bienes Personales)</li>
-            <li>Regímenes de información, percepciones y retenciones</li>
-            <li>Atención de requerimientos y fiscalizaciones</li>
-          </ul>
+    <div class="wrap">
+      <h2 class="section-title" id="servicios-title">Servicios</h2>
+      <p class="section-sub">Cobertura integral para tu negocio con soluciones ajustadas a la identidad DIP.</p>
+      <div class="grid grid-3" role="list">
+        <article class="card" role="listitem">
+          <div class="icon" aria-hidden="true">📊</div>
+          <h3>Contabilidad e informes financieros</h3>
+          <p>Registración, conciliaciones, estados contables y reportes gerenciales para la toma de decisiones.</p>
         </article>
-
-        <!-- Planificación Fiscal -->
-        <article class="card" aria-labelledby="planfiscal-title">
-          <h3 id="planfiscal-title">Planificación Fiscal</h3>
-          <p>Organización tributaria para pagar lo justo, cumpliendo la ley.</p>
-          <ul class="list">
-            <li>Elección de figura y encuadre óptimo</li>
-            <li>Proyección de cargas y cashflow impositivo</li>
-            <li>Beneficios y regímenes especiales aplicables</li>
-            <li>Checklist de cumplimiento y calendario de vencimientos</li>
-          </ul>
+        <article class="card" role="listitem">
+          <div class="icon" aria-hidden="true">🛡️</div>
+          <h3>Auditoría externa e interna</h3>
+          <p>Revisión independiente, procedimientos de control interno y aseguramiento de información.</p>
         </article>
-
-        <!-- Exportación de servicios -->
-        <article class="card" aria-labelledby="export-title">
-          <h3 id="export-title">Exportación de servicios</h3>
-          <p>Te armamos el circuito completo para vender tus servicios al exterior de forma correcta.</p>
-          <ul class="list">
-            <li>Alta y configuración para emitir <strong>Factura E</strong> (AFIP)</li>
-            <li>Criterios de exportación de servicios y encuadre impositivo</li>
-            <li>Modalidades de cobro internacional (bancos/PSP) y trazabilidad</li>
-            <li>Tratamiento impositivo local de los ingresos del exterior</li>
-            <li>Documentación soporte y comprobantes exigibles</li>
-          </ul>
+        <article class="card" role="listitem">
+          <div class="icon" aria-hidden="true">🧾</div>
+          <h3>Impuestos nacionales y provinciales</h3>
+          <p>Liquidación de IVA, Ganancias, IIBB, retenciones/percepciones y atención de requerimientos.</p>
+        </article>
+        <article class="card" role="listitem">
+          <div class="icon" aria-hidden="true">👥</div>
+          <h3>Consultoría laboral y previsional</h3>
+          <p>Altas y bajas, liquidación de haberes, cargas sociales y asesoramiento integral.</p>
+        </article>
+        <article class="card" role="listitem">
+          <div class="icon" aria-hidden="true">🏛️</div>
+          <h3>Sociedades</h3>
+          <p>Constitución, reorganizaciones y asesoramiento legal‑contable para pymes y emprendedores.</p>
+        </article>
+        <article class="card" role="listitem">
+          <div class="icon" aria-hidden="true">🧭</div>
+          <h3>Gestión y planificación fiscal</h3>
+          <p>Diseño de estrategias legales para optimizar la carga impositiva con visión de largo plazo.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Sobre nosotros -->
+  <!-- Nosotros -->
   <section id="nosotros" aria-labelledby="nosotros-title">
-    <div class="container about">
-      <div class="box">
-        <h2 id="nosotros-title">Sobre Estudio contable Dip</h2>
-        <p>Estudio enfocado en <strong>impuestos</strong>, <strong>planificación fiscal lícita</strong> y <strong>exportación de servicios</strong>. Trabajo serio, trato directo y compromiso con el cumplimiento. Respetamos los procedimientos, cuidamos la documentación y damos la cara.</p>
-        <p class="muted">Ubicación: Tucumán, Argentina. Atención online y presencial por agenda.</p>
+    <div class="wrap about">
+      <div>
+        <h2 class="section-title" id="nosotros-title">Nosotros</h2>
+        <p class="section-sub">Estudio Contable DIP nace con la misión de brindar asesoramiento profesional, claro y cercano. Combinamos experiencia técnica con un trato humano para acompañar el crecimiento de cada cliente.</p>
+        <div class="vals">
+          <div class="val"><strong>Ética</strong><br><span class="small">Transparencia y responsabilidad.</span></div>
+          <div class="val"><strong>Compromiso</strong><br><span class="small">Enfoque en resultados.</span></div>
+          <div class="val"><strong>Claridad</strong><br><span class="small">Lenguaje simple, decisiones sólidas.</span></div>
+        </div>
       </div>
-      <div class="box">
-        <h3>Por qué elegirnos</h3>
-        <ul class="list">
-          <li>Orden y previsibilidad: calendario impositivo claro</li>
-          <li>Comunicación directa y sin tecnicismos innecesarios</li>
-          <li>Confidencialidad y resguardo de la información</li>
-          <li>Experiencia con freelancers y pymes que facturan al exterior</li>
-        </ul>
+      <aside>
+        <div class="card">
+          <h3>Equipo</h3>
+          <p class="small">Mientras se suman fotos reales, te presentamos los roles clave:</p>
+          <ul>
+            <li>Dirección y asesor principal (Contador público).</li>
+            <li>Impuestos y fiscalidad.</li>
+            <li>Laboral y previsional.</li>
+            <li>Societario y legal‑contable.</li>
+            <li>Auditoría y control interno.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Clientes / Confianza -->
+  <section aria-labelledby="confianza-title">
+    <div class="wrap trust">
+      <div>
+        <h2 class="section-title" id="confianza-title">Confianza</h2>
+        <p class="section-sub">Más de <strong>X</strong> clientes confían en nosotros para su crecimiento.</p>
+      </div>
+      <div class="logos" aria-label="Logos de clientes (placeholders)">
+        <div class="logo-ph" aria-hidden="true">LOGO 1</div>
+        <div class="logo-ph" aria-hidden="true">LOGO 2</div>
+        <div class="logo-ph" aria-hidden="true">LOGO 3</div>
+        <div class="logo-ph" aria-hidden="true">LOGO 4</div>
+        <div class="logo-ph" aria-hidden="true">LOGO 5</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog / Novedades -->
+  <section id="blog" aria-labelledby="blog-title">
+    <div class="wrap">
+      <h2 class="section-title" id="blog-title">Novedades</h2>
+      <p class="section-sub">Artículos contables, novedades impositivas y tips para pymes.</p>
+      <div class="blog">
+        <article class="post" aria-label="Artículo placeholder 1">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop" alt="Documentos contables sobre escritorio" />
+          <div class="pbody">
+            <h4>Calendario fiscal: próximos vencimientos</h4>
+            <p class="small">Fechas clave para organizar tus presentaciones y pagos.</p>
+          </div>
+        </article>
+        <article class="post" aria-label="Artículo placeholder 2">
+          <img src="https://images.unsplash.com/photo-1553729784-e91953dec042?q=80&w=1200&auto=format&fit=crop" alt="Laptop con gráficos financieros" />
+          <div class="pbody">
+            <h4>Monotributo vs. Responsable Inscripto</h4>
+            <p class="small">Cómo elegir el régimen adecuado según tu actividad.</p>
+          </div>
+        </article>
+        <article class="post" aria-label="Artículo placeholder 3">
+          <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" alt="Reunión de trabajo en oficina" />
+          <div class="pbody">
+            <h4>Checklist para tu primera auditoría</h4>
+            <p class="small">Pasos simples para llegar preparado.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- Contacto -->
   <section id="contacto" aria-labelledby="contacto-title">
-    <div class="container">
-      <h2 id="contacto-title">Contacto</h2>
-      <p class="sub">Escribinos y respondemos en el día hábil.</p>
-      <form id="contactForm" action="estudiocontabledip1@gmail.com" method="post" enctype="text/plain">
-        <div>
-          <label for="nombre">Nombre</label>
-          <input id="nombre" name="Nombre" type="text" placeholder="Tu nombre" required />
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input id="email" name="Email" type="email" placeholder="tu@email.com" required />
-        </div>
-        <div>
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="Mensaje" placeholder="Contanos brevemente qué necesitás (ej.: Factura E, cobro exterior, liquidaciones)" required></textarea>
-        </div>
-        <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap">
-          <button class="btn" type="submit">Enviar</button>
-          <a class="btn" href="https://wa.me/5493810000000" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">WhatsApp</a>
-        </div>
-        <p class="muted" style="margin-top:8px">Al enviar aceptás ser contactado con fines profesionales. No compartimos tus datos con terceros.</p>
-      </form>
+    <div class="wrap contact">
+      <div class="form" role="form" aria-describedby="contacto-help">
+        <h2 class="section-title" id="contacto-title">Contacto</h2>
+        <p id="contacto-help" class="section-sub">Completá el formulario y te contactamos a la brevedad.</p>
+        <form id="contactForm" novalidate>
+          <div class="row">
+            <div>
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required aria-required="true" />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="tu@email.com" required aria-required="true" />
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="telefono">Teléfono</label>
+              <input id="telefono" name="telefono" type="tel" placeholder="Código de área + número" />
+            </div>
+            <div>
+              <label for="asunto">Asunto</label>
+              <input id="asunto" name="asunto" type="text" placeholder="Motivo de la consulta" />
+            </div>
+          </div>
+          <div>
+            <label for="consulta">Consulta</label>
+            <textarea id="consulta" name="consulta" placeholder="Contanos brevemente en qué podemos ayudarte" required aria-required="true"></textarea>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:center;margin-top:1rem;flex-wrap:wrap">
+            <button class="btn btn-primary" type="submit">Enviar consulta</button>
+            <a class="btn btn-ghost" href="https://wa.me/5493810000000?text=Hola%20DIP%2C%20quiero%20hacer%20una%20consulta" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">WhatsApp</a>
+            <span id="formMsg" class="small" role="status" aria-live="polite"></span>
+          </div>
+        </form>
+        <p class="small" style="margin-top:1rem">Dirección: Concepción, Tucumán, Argentina · Email: contacto@estudiocontabledip.com</p>
+      </div>
+      <div>
+        <iframe class="map" title="Mapa de Tucumán" loading="lazy" allowfullscreen
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53218.24538241077!2d-65.623!3d-27.347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d4c4a4a7f0d%3A0x4e3a1a2e8d8a6a1!2sConcepci%C3%B3n%2C%20Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1700000000000"></iframe>
+      </div>
     </div>
   </section>
 
-  <!-- Agendar -->
-  <section id="agendar" aria-labelledby="agendar-title">
-    <div class="container">
-      <h2 id="agendar-title">Agendar reunión</h2>
-      <p class="sub">Botón directo a tu agenda. El cliente elige horario y recibe invitación. Simple.</p>
-      <div class="actions">
-        <button class="btn" id="agendarBtn" aria-label="Abrir agenda de Google Calendar">Abrir agenda</button>
+  <!-- Footer -->
+  <footer aria-label="Pie de página">
+    <div class="footer-wrap">
+      <div>
+        <div class="brand" style="color:#fff">
+          <div class="brand-logo" aria-hidden="true"><span>DIP</span></div>
+          <div>Estudio Contable DIP</div>
+        </div>
+        <p class="small" style="margin-top:.5rem;color:#cbd5e1">Asesoramiento contable integral para pymes y freelancers en Argentina.</p>
+        <div class="socials" aria-label="Redes sociales">
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="YouTube">YouTube</a>
+        </div>
       </div>
-      <div class="sep"></div>
-      <p class="muted">Si tenés link de <em>Programación de citas</em> de Google Calendar, pegalo en el código. Caso contrario, abrimos un evento prellenado para confirmar y activar Google Meet.</p>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap">
-        <span>© <span id="year"></span> Estudio contable Dip. Todos los derechos reservados.</span>
-        <span class="muted">Hecho en Tucumán.</span>
+      <div>
+        <h4 style="margin:0 0 .5rem">Contacto</h4>
+        <p class="small">WhatsApp: +54 9 381 000 0000<br>Email: contacto@estudiocontabledip.com</p>
+        <a class="cta" href="#contacto">Agendá tu consulta</a>
       </div>
     </div>
+    <div class="legal">© <span id="year"></span> Estudio Contable DIP · Todos los derechos reservados</div>
   </footer>
 
   <script>
-    // ===== PERSONALIZACIÓN RÁPIDA =====
-    const APPOINTMENT_URL = ""; // <- pegá aquí tu enlace público de citas
-
-    // ===== NAVEGACIÓN SUAVE =====
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href');
-        if(id.length > 1){
-          e.preventDefault();
-          document.querySelector(id)?.scrollIntoView({behavior:'smooth', block:'start'});
-        }
-      });
+    // Mobile menu toggle
+    const burger = document.getElementById('burger');
+    const menu = document.getElementById('menu');
+    burger?.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
 
-    // ===== AÑO FOOTER =====
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // ===== MENU MOBILE =====
-    const menuBtn = document.getElementById('menuBtn');
-    const primaryNav = document.getElementById('primaryNav');
-    menuBtn.addEventListener('click', ()=>{
-      const open = primaryNav.classList.toggle('show');
-      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    primaryNav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
-      if(window.innerWidth < 900){ primaryNav.classList.remove('show'); menuBtn.setAttribute('aria-expanded','false'); }
-    }));
-
-    // ===== AGENDA (Popup centrado) =====
-    function openPopup(url){
-      const w = 1040, h = 780;
-      const dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : window.screenX;
-      const dualScreenTop = window.screenTop !== undefined ? window.screenTop : window.screenY;
-      const width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
-      const height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
-      const left = ((width - w) / 2) + dualScreenLeft;
-      const top = ((height - h) / 2) + dualScreenTop;
-      const features = `scrollbars=yes, width=${w}, height=${h}, top=${top}, left=${left}`;
-      const popup = window.open(url, '_blank', features);
-      if(!popup){ window.location.href = url; }
-    }
-
-    function buildCalendarTemplate(){
-      const base = 'https://calendar.google.com/calendar/u/0/r/eventedit';
-      const params = new URLSearchParams({
-        text: 'Reunión con Estudio contable Dip',
-        details: 'Consulta impositiva (30 minutos). Indicar si necesitás Factura E / cobro exterior. Al confirmar, activá Google Meet.',
-        location: 'Google Meet',
-      });
-      return `${base}?${params.toString()}`;
-    }
-
-    function openScheduler(){
-      const url = APPOINTMENT_URL && APPOINTMENT_URL.startsWith('http') ? APPOINTMENT_URL : buildCalendarTemplate();
-      openPopup(url);
-    }
-
-    document.getElementById('agendarBtn').addEventListener('click', openScheduler);
-    document.getElementById('agendarTop').addEventListener('click', (e)=>{ e.preventDefault(); openScheduler(); });
-    document.getElementById('agendarHero').addEventListener('click', (e)=>{ e.preventDefault(); openScheduler(); });
-
-    // ===== Validación simple de formulario (cliente) =====
-    document.getElementById('contactForm').addEventListener('submit', function(){
-      const nombre = document.getElementById('nombre').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const mensaje = document.getElementById('mensaje').value.trim();
-      if(!nombre || !email || !mensaje){
-        alert('Completá todos los campos.');
+    // Basic form handler (front-end only)
+    const form = document.getElementById('contactForm');
+    const msg = document.getElementById('formMsg');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      if(!data.nombre || !data.email || !data.consulta){
+        msg.textContent = 'Completá nombre, email y consulta.';
+        msg.style.color = '#b45309';
+        return;
       }
+      msg.textContent = '¡Gracias! Tu consulta fue registrada. Te contactaremos a la brevedad.';
+      msg.style.color = '#15803d';
+      form.reset();
     });
+
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
